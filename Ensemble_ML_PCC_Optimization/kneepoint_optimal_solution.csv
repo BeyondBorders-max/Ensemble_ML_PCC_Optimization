@@ -1,0 +1,2 @@
+Solution_ID,co2_recovery,co2_purity,sec_energy,solvent_loss,opex_usd_per_t,corrosion_rate,flue_gas_mass_flow,flue_gas_co2_mol,lean_solvent_mass_flow,lean_solvent_temp,amine_type,amine_wt_pct,reboiler_duty,reboiler_temp,stripper_reflux_ratio,corrosion_inhibitor_wt_pct,Feasible_Aspen,Validation_Error_Pct,Knee_Distance
+1,98.92,99.45,10248.5,21.84,0.89,1.42,1454888.4,0.0402,1350000.0,38.2,2,42.6,272.5,112.4,1.15,0.85,True,5.12,0.5727
