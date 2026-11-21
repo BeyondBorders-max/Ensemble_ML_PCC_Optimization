@@ -1,6 +1,6 @@
-# Many-Objective Ensemble Machine Learning Optimization of Amine-Based Post-Combustion Carbon Capture
+# Ensemble Machine Learning for Multi-Objective Optimization of Amine-Based Post-Combustion Carbon Capture with Shap and Counterfactual Explanation
 
-This repository contains the code and data associated with the extended study on many-objective optimization of amine-based post-combustion carbon capture (PCC) processes. Building on Hanifi et al. (2026), this work substantially expands the modeling and optimization framework with a richer dataset, a diverse ensemble of surrogate models, six simultaneous optimization targets, and a Knee-Point decision-making strategy for Pareto solution selection.
+This repository contains the code and data associated with the extended study on multi-objective optimization of amine-based post-combustion carbon capture (PCC) processes. Building on Hanifi et al. (2026), this work substantially expands the modeling and optimization framework with a richer dataset, a diverse ensemble of surrogate models, six simultaneous optimization targets, and a Knee-Point decision-making strategy for Pareto solution selection and dual XAI.
 
 ## Overview
 
@@ -9,10 +9,11 @@ Post-combustion carbon capture (PCC) using amine-based absorption remains one of
 - **Expanded Rigorous Process Simulation:** A dataset of **5,200 simulation rows** spanning five amine solvents (MEA, DGA, DEA, TEA, MDEA) generated via a Python–Aspen Plus interface using the ENRTL-RK thermodynamic model. Starting from **34 initial input variables**, feature selection via Multi-Random Forest Gini importance (threshold < 0.005) reduces the working set to **30 final inputs**.
 - **Eight Surrogate Models:** ANN, TabPFN, PSO-CatBoost, PSO-AdaBoost, PSO-XGBoost, PSO-GBR, Bagged CatBoost (6× base learners), and a Stacked Meta-Surrogate — covering individual, PSO-tuned, bagged, and stacked architectures.
 - **Six Optimization Targets:** CO₂ recovery (%), CO₂ purity (%), specific energy consumption — SEC (kJ/kg CO₂), solvent loss (kg/h), OPEX ($/t CO₂), and corrosion rate (mm/yr).
-- **Many-Objective Optimization:** The best-performing surrogate is coupled with **NSGA-III** to explore high-dimensional trade-offs across all six objectives simultaneously.
+- **Multi-Objective Optimization:** The best-performing surrogate is coupled with **NSGA-III** to explore high-dimensional trade-offs across all six objectives simultaneously.
 - **Aspen Plus Validation & Knee-Point Selection:** 132 Pareto optimal solutions are validated in Aspen Plus, and the final operating point is selected via **Knee-Point** analysis (not TOPSIS).
-
-### Key Findings
+- **Shap and Counterfactual Explainations ** shap identifies the most influential variables and their effects on performance while DiCE identify the minimum changes in operating conditions required to achieve desired performance targets.
+- 
+- ### Key Findings
 
 | Model | R² (avg. across targets) |
 |---|---|
@@ -93,12 +94,12 @@ pip install -r requirements.txt
 If you use this code, data, or methodology in your research, please cite our paper:
 
 ```bibtex
-@article{YOURLASTNAME2026,
-  title   = {Many-Objective Ensemble Machine Learning Optimization of Amine-Based Post-Combustion Carbon Capture},
-  journal = {[Journal Name]},
+@article{Garba2026,
+  title   = {Ensemble Machine Learning for Multi-Objective Optimization of Amine-Based Post-Combustion Carbon Capture with shap and Counterfactual explanations},
+  journal = {[Energy]},
   year    = {2026},
-  author  = {[Author Names]},
-  keywords = {Post-combustion carbon capture, Amine-based absorption, Ensemble machine learning, NSGA-III, Knee-Point, Many-objective optimization}
+  author  = {[Garba Muhammad Anchau, Oluwanifemi Boluwatife Ogunsina, Muhammad Malah Bukar, Halimatu Musa, Shehu Abdullahi]},
+  keywords = {Amine based absorption; Ensemble Machine Learning; Explainable artificial intelligence; Knee-point;  Multi-Objective Optimization, NSGA-III, Post Combustion Carbon capture}
 }
 ```
 
@@ -119,6 +120,6 @@ If you also use or build on the base methodology from Hanifi et al. (2026), plea
 
 ## Links
 
-- **Repository:** [https://github.com/msganchau1998-web/PCC-Ensemble-Optimization](https://github.com/msganchau1998-web/PCC-Ensemble-Optimization)
+- **Repository:** [[(https://github.com/BeyondBorders-max/Ensemble_ML_PCC_Optimization/tree/main/Ensemble_ML_PCC_Optimization]]
 - **Base Paper (Hanifi et al. 2026):** [Multi-objective optimization of the amine-based natural gas-fired post-combustion carbon capture process using machine learning surrogate modeling](https://doi.org/10.1016/j.energy.2026.141133)
 - **License:** [MIT License](LICENSE)
